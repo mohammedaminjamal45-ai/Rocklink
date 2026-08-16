@@ -46,7 +46,7 @@ export default function Home() {
         <h1 className="text-6xl font-black leading-[0.92] tracking-tight sm:text-9xl">
           one link.
           <br />
-          <span className="bg-gradient-to-r from-[#F4A261] via-[#E76F51] to-[#E63946] bg-clip-text text-transparent">
+          <span className="animate-gradient bg-gradient-to-r from-[#F4A261] via-[#E76F51] to-[#E63946] bg-clip-text text-transparent">
             everything
           </span>
           <br />
@@ -57,21 +57,12 @@ export default function Home() {
           content, and every platform you post on, in one place.
         </p>
         <div className="mt-10 flex gap-4">
-          <a href="#waitlist" className="rounded-full bg-white px-7 py-3.5 text-sm font-medium text-black transition hover:scale-105 hover:bg-white/90">
+          <a href="#waitlist" className="animate-pulse-glow rounded-full bg-white px-7 py-3.5 text-sm font-medium text-black transition hover:scale-105 hover:bg-white/90">
             Claim your link
           </a>
           <a href="#platform" className="rounded-full border border-white/20 px-7 py-3.5 text-sm font-medium text-white/80 transition hover:border-white/40 hover:text-white">
             See how it works
           </a>
-        </div>
-      </section>
-
-      {/* WORKS WITH — ticker style */}
-      <section className="relative z-10 mt-24 overflow-hidden border-y border-white/10 py-6">
-        <div className="flex animate-marquee gap-16 whitespace-nowrap text-sm uppercase tracking-widest text-white/40">
-          {[...PLATFORMS, ...PLATFORMS, ...PLATFORMS].map((p, i) => (
-            <span key={i}>{p}</span>
-          ))}
         </div>
       </section>
 
