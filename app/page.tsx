@@ -14,6 +14,12 @@ const COMMERCE = [
   { title: "Direct payouts", body: "Sales go to your account. No separate merchant setup." },
 ];
 
+const PLANS = [
+  { name: "Starter", price: "$6", features: ["1 storefront link", "Up to 10 products", "Basic analytics"] },
+  { name: "Pro", price: "$15", features: ["Unlimited products", "In-page checkout", "Full analytics", "Priority support"], highlighted: true },
+  { name: "Premium", price: "$30", features: ["Everything in Pro", "AI product suggestions", "Custom domain", "Team accounts"] },
+];
+
 const PLATFORMS = ["Instagram", "TikTok", "YouTube", "X", "Spotify", "Threads"];
 
 export default function Home() {
@@ -132,23 +138,53 @@ export default function Home() {
         </p>
       </section>
 
-      {/* PRICING */}
+      {/* PRICING — real 3 tiers */}
       <section id="pricing" className="relative z-10 px-8 pb-28 sm:px-16">
         <p className="mb-3 text-xs uppercase tracking-widest text-white/40">Pricing</p>
-        <h2 className="mb-8 max-w-2xl text-3xl font-bold sm:text-5xl">
-          Free to use. We only get paid when you do.
+        <h2 className="mb-12 max-w-2xl text-3xl font-bold sm:text-5xl">
+          Simple pricing. Pick your plan.
         </h2>
-        <div className="max-w-md rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
-          <div className="flex items-end justify-between">
-            <span className="text-sm text-white/60">You keep</span>
-            <span className="font-mono text-4xl">97.5%</span>
-          </div>
-          <div className="mt-4 h-2 overflow-hidden rounded-full bg-white/10">
-            <div className="h-full w-[97.5%] rounded-full bg-gradient-to-r from-[#F4A261] to-[#E63946]" />
-          </div>
-          <p className="mt-4 text-sm text-white/50">
-            2.5% transaction fee. No subscription. Nothing else.
-          </p>
+        <div className="grid gap-4 sm:grid-cols-3">
+          {PLANS.map((plan) => (
+            <div
+              key={plan.name}
+              className={`relative rounded-2xl p-8 backdrop-blur-sm transition ${
+                plan.highlighted
+                  ? "border border-white/30 bg-white/[0.08] hover:border-white/50"
+                  : "border border-white/10 bg-white/5 hover:border-white/20"
+              }`}
+            >
+              {plan.highlighted && (
+                <span className="absolute -top-3 left-8 rounded-full bg-gradient-to-r from-[#F4A261] to-[#E63946] px-3 py-1 text-xs font-medium text-black">
+                  Most popular
+                </span>
+              )}
+              <h3 className="text-sm font-medium uppercase tracking-widest text-white/50">
+                {plan.name}
+              </h3>
+              <p className="mt-4 text-5xl font-bold">
+                {plan.price}
+                <span className="text-lg font-normal text-white/40">/mo</span>
+              </p>
+              <ul className="mt-6 space-y-2">
+                {plan.features.map((f) => (
+                  <li key={f} className="text-sm text-white/60">
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="#waitlist"
+                className={`mt-8 block rounded-full py-3 text-center text-sm font-medium transition ${
+                  plan.highlighted
+                    ? "bg-white text-black hover:scale-105 hover:bg-white/90"
+                    : "border border-white/20 text-white/80 hover:border-white/40 hover:text-white"
+                }`}
+              >
+                Get started
+              </a>
+            </div>
+          ))}
         </div>
       </section>
 
