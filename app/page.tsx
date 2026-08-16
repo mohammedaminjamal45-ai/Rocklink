@@ -1,5 +1,5 @@
-import Orb from "@/components/Orb";
-import FloatCard from "@/components/FloatCard";
+﻿import Orb from "../components/Orb";
+import FloatCard from "../components/FloatCard";
 
 const COMMERCE = [
   { title: "In-page checkout", body: "Buyers pay without ever leaving your page." },
@@ -145,7 +145,7 @@ export default function Home() {
                   <li key={f} className="text-sm text-[var(--muted)]">{f}</li>
                 ))}
               </ul>
-              
+              <a
                 href="#waitlist"
                 className={plan.highlighted ? "mt-8 block rounded-full bg-gradient-to-r from-[var(--accent)] to-[var(--accent2)] py-3 text-center font-mono text-xs uppercase tracking-widest text-white transition hover:scale-105" : "mt-8 block rounded-full border border-white/15 py-3 text-center font-mono text-xs uppercase tracking-widest text-[var(--muted)] transition hover:border-white/40 hover:text-white"}
               >
