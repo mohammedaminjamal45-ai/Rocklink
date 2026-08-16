@@ -2,31 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
-html {
-  scroll-behavior: smooth;
+:root {
+  --bg: #060608;
+  --ink: #f5f4f0;
+  --muted: #8f8f96;
+  --line: #232228;
+  --accent: #ff3d5a;
+  --accent2: #7c3aff;
 }
 
 body {
-  background-color: #0a0a0f;
-  color: #ffffff;
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body), sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-@keyframes blob-a {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(6%, 8%) scale(1.1); }
+.font-display { font-family: var(--font-display), sans-serif; }
+.font-mono { font-family: var(--font-mono), monospace; }
+
+@keyframes float-a {
+  0%, 100% { transform: translate(0,0) scale(1) rotate(0deg); }
+  33% { transform: translate(4%,6%) scale(1.08) rotate(8deg); }
+  66% { transform: translate(-3%,-4%) scale(0.94) rotate(-6deg); }
 }
-@keyframes blob-b {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-6%, -6%) scale(0.92); }
+@keyframes float-b {
+  0%, 100% { transform: translate(0,0) scale(1) rotate(0deg); }
+  50% { transform: translate(-5%,5%) scale(1.1) rotate(-10deg); }
 }
-.animate-blob-a { animation: blob-a 10s ease-in-out infinite; }
-.animate-blob-b { animation: blob-b 8s ease-in-out infinite; }
+.animate-float-a { animation: float-a 12s ease-in-out infinite; }
+.animate-float-b { animation: float-b 9s ease-in-out infinite; }
+
+@keyframes text-glow {
+  0%, 100% { text-shadow: 0 0 24px rgba(255,61,90,0.35), 0 0 64px rgba(124,58,255,0.18); }
+  50% { text-shadow: 0 0 40px rgba(255,61,90,0.6), 0 0 90px rgba(124,58,255,0.35); }
+}
+.animate-text-glow { animation: text-glow 3.5s ease-in-out infinite; }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-33.333%); }
+}
+.animate-marquee { animation: marquee 24s linear infinite; }
+
+@keyframes card-drift {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-card-drift { animation: card-drift 5s ease-in-out infinite; }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-blob-a, .animate-blob-b { animation: none; }
+  .animate-float-a, .animate-float-b, .animate-text-glow, .animate-marquee, .animate-card-drift {
+    animation: none;
+  }
 }
