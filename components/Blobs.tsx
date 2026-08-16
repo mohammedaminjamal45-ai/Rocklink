@@ -1,48 +1,25 @@
 export default function Blobs() {
   return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden">
-      {/* Blob 1 - Red/Navy */}
+    <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
       <div
-        className="absolute blur-3xl"
+        className="absolute left-1/2 top-[-15%] h-[600px] w-[600px] -translate-x-1/2 rounded-full opacity-70 blur-3xl animate-drift-slow"
         style={{
-          width: '400px',
-          height: '400px',
-          background: 'radial-gradient(circle at 30% 50%, #ff4444, #0a0a1a)',
-          opacity: 0.6,
-          top: '-100px',
-          left: '-50px',
-          borderRadius: '50%',
-          zIndex: 1,
+          background:
+            "radial-gradient(circle at 30% 30%, #E63946, #1D3557 40%, #0A0A0F 70%)",
         }}
       />
-
-      {/* Blob 2 - Teal/Dark Teal */}
       <div
-        className="absolute blur-3xl"
+        className="absolute right-[-15%] top-[10%] h-[480px] w-[480px] rounded-full opacity-60 blur-3xl animate-drift-medium"
         style={{
-          width: '500px',
-          height: '500px',
-          background: 'radial-gradient(circle at 60% 40%, #00d4ff, #003d44)',
-          opacity: 0.6,
-          top: '300px',
-          right: '-100px',
-          borderRadius: '50%',
-          zIndex: 1,
+          background:
+            "radial-gradient(circle at 60% 40%, #2A9D8F, #264653 50%, transparent 75%)",
         }}
       />
-
-      {/* Blob 3 - Orange/Coral */}
       <div
-        className="absolute blur-3xl"
+        className="absolute left-[0%] top-[45%] h-[520px] w-[520px] rounded-full opacity-60 blur-3xl animate-drift-fast"
         style={{
-          width: '450px',
-          height: '450px',
-          background: 'radial-gradient(circle at 40% 70%, #ff8844, #cc3344)',
-          opacity: 0.6,
-          bottom: '0px',
-          left: '40%',
-          borderRadius: '50%',
-          zIndex: 1,
+          background:
+            "radial-gradient(circle at 50% 50%, #F4A261, #E76F51 45%, transparent 75%)",
         }}
       />
     </div>

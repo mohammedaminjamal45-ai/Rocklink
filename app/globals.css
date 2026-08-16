@@ -39,3 +39,37 @@ input {
 input:focus {
   outline: none;
 }
+
+/* Blob animations */
+@keyframes drift-slow {
+  0%, 100% { transform: translate(-50%, 0) scale(1); }
+  50% { transform: translate(-46%, 4%) scale(1.05); }
+}
+
+@keyframes drift-medium {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-3%, 5%) scale(0.96); }
+}
+
+@keyframes drift-fast {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(4%, -4%) scale(1.04); }
+}
+
+.animate-drift-slow { animation: drift-slow 14s ease-in-out infinite; }
+.animate-drift-medium { animation: drift-medium 11s ease-in-out infinite; }
+.animate-drift-fast { animation: drift-fast 9s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-drift-slow, .animate-drift-medium, .animate-drift-fast {
+    animation: none;
+  }
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-33.333%); }
+}
+
+.animate-marquee { animation: marquee 30s linear infinite; }
